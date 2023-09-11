@@ -104,3 +104,42 @@ flowchart TB
     D3 -- No --> CII
     O-->E
 ```
+
+## Exercise 4
+
+### Pseudocode
+
+```
+
+input A
+input B
+input C
+
+OUTPUT = False
+
+if (B + C) > A && (A + C) > B && (A + B) > C
+    OUTPUT = True
+
+output OUTPUT
+```
+
+### Flowchart
+
+```mermaid
+flowchart TB
+    S([start])
+    I1[/A/]
+    I2[/B/]
+    I3[/C/]
+    D{"(B + C) > A && (A + C) > B && (A + B) > C"}
+    CT[OUTPUT = True]
+    CF[OUTPUT = False]
+    O[/OUTPUT/]
+    E([end])
+
+    S --> I1 --> I2 --> I3 --> CF
+    CF --> D
+    D -- Yes --> CT --> O
+    D -- No --> O
+    O-->E
+```
