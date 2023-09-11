@@ -143,3 +143,35 @@ flowchart TB
     D -- No --> O
     O-->E
 ```
+
+## Exercise 5
+
+### Flowchart
+
+```mermaid
+flowchart TB
+    S([start])
+    I1[/NAME/]
+    I2[/MARK/]
+    D1{MARK >= 0.8}
+    D2{MARK >= 0.6}
+    D3{MARK >= 0.4}
+    O1[/A/]
+    O2[/B/]
+    O3[/C/]
+    O4[/No Grade/]
+    E([end])
+
+    S --> I1 --> I2
+    I2 --> D1
+    D1 -- Yes --> O1
+    D1 -- No --> D2
+    D2 -- Yes --> O2
+    D2 -- No --> D3
+    D3 -- Yes --> O3
+    D3 -- No --> O4
+    O1 --> E
+    O2 --> E
+    O3 --> E
+    O4 --> E
+```
