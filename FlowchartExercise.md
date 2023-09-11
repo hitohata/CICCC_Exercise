@@ -25,3 +25,27 @@ flowchart TB
     C1 --> I2
     I2 --> E
 ```
+
+## Exercise 2
+
+```
+input LENGTH
+input WIDTH
+AREA = L * M
+output AREA
+```
+
+```mermaid
+flowchart TB
+    S([start])
+    E([end])
+    I1[/LENGTH/]
+    I2[/WIDTH/]
+    C1[AREA = LENGTH * WIDTH]
+    O[/AREA/]
+    S-->I1
+    I1-->I2
+    I2-->C1
+    C1-->O
+    O-->E
+```
