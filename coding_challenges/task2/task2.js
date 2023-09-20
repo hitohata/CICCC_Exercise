@@ -42,16 +42,15 @@ function calculateTotalScore(students) {
 function passedStudentsDegree(students, degrees, limits) {
     const studentWithTotal = calculateTotalScore(students);
 
-    const studentWithDegree = [];
-
-    studentWithTotal.forEach(student => {
+    const studentWithDegree = studentWithTotal.map(student => {
         // check the degree by looping limits and degrees array.
-        for (let index = 0; index < limits.length; index++) {
+        for (let index; index < limits.length; index++) {
             if (student.total > limits[index]) {
-                studentWithDegree.push({ ...student, "degree": degrees[index] });
-                break
-            }
+                student = { ...student, "degree": degrees[index] };
+                return student
+            };
         }
+        return student
     });
 
     return studentWithDegree
@@ -61,5 +60,5 @@ function passedStudentsDegree(students, degrees, limits) {
 // 5. Display the final result in console.
 
 passedStudentsDegree(students, degrees, limits).forEach(result => {
-    console.log("Name:", result.name, "Degree:", result.degree, "Total Score:", result.total);
+    console.log("Name:", result.name, "Degree:", result.degree ? result.degree : "Failed", "Total Score:", result.total);
 })
