@@ -17,15 +17,7 @@
 
 // The implementation
 export function searchArrayFn(arr: number[], target: number): boolean {
-
-    if (arr.length === 0) return false;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) {
-            return true;
-        }
-    }
-    return false
+    return arr.includes(target) !== -1
 }
 
 
@@ -57,5 +49,12 @@ if (import.meta.vitest) {
         test('should return false for an array without target element', () => {
             expect(searchArrayFn([1, 2, 3, 4, 5], 6)).toBe(false);
         });
+
+        test.only("", () => {
+            const bigNumber = new Array(10000).map((acc, x) => acc += 1, 1);
+            console.time()
+            expect(searchArrayFn(bigNumber, 10000))
+            console.timeEnd()
+        })
     })
 }
