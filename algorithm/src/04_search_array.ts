@@ -17,16 +17,9 @@
 
 // The implementation
 export function searchArrayFn(arr: number[], target: number): boolean {
-
-    if (arr.length === 0) return false;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) {
-            return true;
-        }
-    }
-    return false
+    return arr.includes(target)
 }
+
 
 
 

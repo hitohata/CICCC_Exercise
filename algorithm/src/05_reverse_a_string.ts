@@ -17,7 +17,7 @@
 
 // The implementation
 export function reverseStringFn(str: string): string {
-    return str.split("").map((_, i, arr) => arr[str.length -1 - i]).join("")
+    return str.split("").reverse().join("")
 }
 
 
