@@ -35,7 +35,7 @@ export function searchArrayFn(arr: number[], target: number): boolean {
 if (import.meta.vitest) {
     const { describe, expect, test } = import.meta.vitest
 
-    describe.only('searchArrayFn', () => {
+    describe('searchArrayFn', () => {
         // Test case 1: Empty array should return false
         test('should return false for an empty array', () => {
             expect(searchArrayFn([], 1)).toBe(false);
@@ -50,6 +50,5 @@ if (import.meta.vitest) {
         test('should return false for an array without target element', () => {
             expect(searchArrayFn([1, 2, 3, 4, 5], 6)).toBe(false);
         });
-
     })
 }
