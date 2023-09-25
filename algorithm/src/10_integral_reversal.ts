@@ -22,7 +22,7 @@ export function integralReversalFn(num: number): number {
 
     const plusOrMinus = num < 0 ? -1 : 1;
 
-    const reversedNumber = Math.abs(num).toString().split("").map((_, i, arr) => arr[arr.length - 1 - i]).join("");
+    const reversedNumber = Math.abs(num).toString().split("").reverse().join("");
 
     return Number(reversedNumber) * plusOrMinus
 
