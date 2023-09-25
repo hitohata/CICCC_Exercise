@@ -21,7 +21,8 @@
 
 // The implementation
 export function anagramFn(str1: string, str2: string): boolean {
-    return str1.split("").sort().join() == str2.split("").sort().join()
+    const sanitize = (str: string) => str.toLowerCase().replace(/[^a-z0-9]/g, '').split("").sort().join();
+    return sanitize(str1) === sanitize(str2)
 }
 
 
@@ -58,5 +59,9 @@ if (import.meta.vitest) {
         test('should return false for two strings with the same characters but different lengths', () => {
             expect(anagramFn('abcd', 'abcdd')).toBe(false);
         });
+
+        test("tom riddle", () => {
+            expect(anagramFn('Tom Marvolo Riddle', 'I am Lord Voldemort')).toBe(true)
+        })
     })
 }
