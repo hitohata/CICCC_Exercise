@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		:root {
+		  --primary-bg: rgba(44,62,80 ,1);
+		  --secondary-bg: rgba(0,0,0,0.9);
+		  --box-shadow-color-1: gold;
+		  --box-shadow-color-2: rgba(149,165,166 ,0.1);
+		  --box-shadow-color-3: #ecf0f1;
+		  --phone-width: 350px;
+		  --phone-height: 700px;
+		}
+
+		body {
+			background-color: var(--secondary-bg);
+		}
+
+		#outline {
+            position: absolute;
+			width: var(--phone-width);
+			height: var(--phone-height);
+			background-color: var(--secondary-bg);
+			top: 50%;
+			left: 50%;
+            transform: translate(-50%, -50%);
+
+			/*border: solid;*/
+			border-radius: 20px;
+			/*border-color: var(--box-shadow-color-1) var(--box-shadow-color-2) var(--box-shadow-color-2) var(--box-shadow-color-1);*/
+			/*border-width: 2px 5px 10px 1px;*/
+
+			box-shadow: 3px 10px var(--box-shadow-color-2), -1px -2px var(--box-shadow-color-1);
+		}
+
+		#display {
+			position: absolute;
+			width: 300px;
+            height: 550px;
+			background-color: var(--primary-bg);
+			top: 48%;
+			left: 50%;
+            transform: translate(-50%, -50%);
+
+			border-radius: 5px;
+		}
+
+		#microphone {
+			position: absolute;
+			width: 60px;
+			height: 8px;
+			background-color: var(--primary-bg);
+            top: 8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+			border-radius: 5px;
+		}
+
+		#camera {
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			background-color: var(--primary-bg);
+			top: 6%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+			border-radius: 50%;
+		}
+
+		#some-hole {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background-color: var(--primary-bg);
+			top: 8%;
+            left: 44%;
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+		}
+
+		#home-button {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background-color: var(--secondary-bg);
+			top: 89%;
+            left: 50%;
+            /*transform: translate(-50%, -50%) rotate(-45deg);*/
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+			box-shadow: -1px -1px var(--box-shadow-color-3), 1px -1px var(--box-shadow-color-3), -1px 1px var(--box-shadow-color-1), 1px 1px var(--box-shadow-color-2);
+			/*border-color: var(--box-shadow-color-3) var(--box-shadow-color-3) var(--box-shadow-color-2)  var(--box-shadow-color-1);*/
+		}
+	</style>
+</head>
+<body>
+	<div id="outline"></div>
+	<div id="display"></div>
+	<div id="microphone"></div>
+	<div id="camera"></div>
+	<div id="some-hole"></div>
+	<div id="home-button"></div>
+</body>
+</html>
