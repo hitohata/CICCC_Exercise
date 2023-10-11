@@ -27,16 +27,13 @@
 			left: 50%;
             transform: translate(-50%, -50%);
 
-			/*border: solid;*/
 			border-radius: 20px;
-			/*border-color: var(--box-shadow-color-1) var(--box-shadow-color-2) var(--box-shadow-color-2) var(--box-shadow-color-1);*/
-			/*border-width: 2px 5px 10px 1px;*/
 
 			box-shadow: 3px 10px var(--box-shadow-color-2), -1px -2px var(--box-shadow-color-1);
 		}
 
 		#display {
-			position: absolute;
+			position: relative;
 			width: 300px;
             height: 550px;
 			background-color: var(--primary-bg);
@@ -48,11 +45,11 @@
 		}
 
 		#microphone {
-			position: absolute;
+			position: fixed;
 			width: 60px;
 			height: 8px;
 			background-color: var(--primary-bg);
-            top: 8%;
+            top: 6%;
             left: 50%;
             transform: translate(-50%, -50%);
 
@@ -60,11 +57,11 @@
 		}
 
 		#camera {
-			position: absolute;
+			position: fixed;
 			width: 8px;
 			height: 8px;
 			background-color: var(--primary-bg);
-			top: 6%;
+			top: 3%;
             left: 50%;
             transform: translate(-50%, -50%);
 
@@ -72,23 +69,23 @@
 		}
 
 		#some-hole {
-			position: absolute;
+			position: fixed;
 			width: 10px;
 			height: 10px;
 			background-color: var(--primary-bg);
-			top: 8%;
-            left: 44%;
+			top: 6%;
+            left: 37%;
             transform: translate(-50%, -50%);
 
             border-radius: 50%;
 		}
 
 		#home-button {
-			position: absolute;
+			position: fixed;
 			width: 50px;
 			height: 50px;
 			background-color: var(--secondary-bg);
-			top: 89%;
+			top: 93%;
             left: 50%;
             /*transform: translate(-50%, -50%) rotate(-45deg);*/
             transform: translate(-50%, -50%);
@@ -101,11 +98,12 @@
 	</style>
 </head>
 <body>
-	<div id="outline"></div>
-	<div id="display"></div>
-	<div id="microphone"></div>
-	<div id="camera"></div>
-	<div id="some-hole"></div>
-	<div id="home-button"></div>
+	<div id="outline">
+		<div id="display"></div>
+		<div id="microphone"></div>
+		<div id="camera"></div>
+		<div id="some-hole"></div>
+		<div id="home-button"></div>
+	</div>
 </body>
 </html>
