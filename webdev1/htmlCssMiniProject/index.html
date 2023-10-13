@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Title</title>
+	<style>
+		:root {
+			--main-bg-first-row: rgba(241, 180, 42, 0.1);
+            --main-bg-second-row: rgba(253, 253, 63, 0.1);
+		}
+
+		header {
+			margin: 20px 0;
+			padding: 10px
+		}
+
+		body {
+			background-color: var(--main-bg-first-row);
+		}
+
+		.logic-circuit-container {
+            display: grid;
+			padding: 20px;
+			grid-template-columns: repeat(3, 1fr);
+			align-items: center;
+            background-color: var(--main-bg-first-row);
+			border-bottom: solid black;
+		}
+
+		.logic-circuit-container:nth-child(2n) {
+			background-color: var(--main-bg-second-row);
+		}
+
+		.logic-table, .circuit-diagram, .circuit {
+			text-align: center;
+		}
+
+		.logic-table::before {
+			content: "table";
+		}
+		.circuit-diagram::before {
+			content: "electric circuit";
+		}
+
+		.circuit::before {
+			content: "logic circuit diagram";
+			margin-bottom: 100px;
+		}
+
+		.item {
+			margin: 20px 0;
+		}
+
+		table {
+			margin: 1rem;
+			width: 80%;
+		}
+
+		th, td {
+			padding: 10px;
+		}
+
+		thead {
+			background-color: rgba();
+		}
+
+		td {
+            text-align: center;
+		}
+
+		tbody>tr {
+            background-color: rgba(0, 0 , 0, 0.1);
+		}
+		tbody>tr:nth-child(2n + 2) {
+            background-color: rgba(255, 255 , 255, 1);
+		}
+
+		.logic-table table thead th {
+			padding: 10px;
+		}
+
+		@media (max-width: 768px) {
+			.logic-circuit-container {
+				grid-template-columns: 1fr;
+			}
+        }
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Logic circuit</h1>
+		<section title="abstract">
+			The logic circuit calculates logic using electric voltage that represents 0 or 1.
+			The CPU is created by integrating this circuit.
+		</section>
+	</header>
+	<main>
+		<section class="logic-circuit-container" title="and">
+			<div class="logic-table  item">
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2">Input</th><th>Output</th>
+						</tr>
+						<tr>
+							<th>A</th><th>B</th><th>Y</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td><td>0</td><td>0</td>
+						</tr>
+						<tr>
+							<td>1</td><td>0</td><td>0</td>
+						</tr>
+						<tr>
+							<td>0</td><td>1</td><td>0</td>
+						</tr>
+						<tr>
+							<td>1</td><td>1</td><td>1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="circuit item">
+				<div id="and-circuit">
+					<img src="./img/and.drawio.svg" alt="and">
+				</div>
+			</div>
+			<div class="circuit-diagram item">
+					<img src="./img/and-circuit-diagram.drawio.svg" alt="and">
+			</div>
+		</section>
+		<section class="logic-circuit-container" title="or">
+			<div class="logic-table item">
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2">Input</th><th>Output</th>
+						</tr>
+						<tr>
+							<th>A</th><th>B</th><th>Y</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td><td>0</td><td>0</td>
+						</tr>
+						<tr>
+							<td>1</td><td>0</td><td>1</td>
+						</tr>
+						<tr>
+							<td>0</td><td>1</td><td>1</td>
+						</tr>
+						<tr>
+							<td>1</td><td>1</td><td>1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="circuit item">
+				<div id="or-circuit">
+					<img src="./img/or.drawio.svg" alt="or">
+				</div>
+			</div>
+			<div class="circuit-diagram item">
+				<img src="./img/or-circuit.svg" alt="or"/>
+			</div>
+		</section>
+		<section class="logic-circuit-container" title="nand">
+			<div class="logic-table item">
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2">Input</th><th>Output</th>
+						</tr>
+						<tr>
+							<th>A</th><th>B</th><th>Y</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td><td>0</td><td>1</td>
+						</tr>
+						<tr>
+							<td>1</td><td>0</td><td>1</td>
+						</tr>
+						<tr>
+							<td>0</td><td>1</td><td>1</td>
+						</tr>
+						<tr>
+							<td>1</td><td>1</td><td>0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="circuit item">
+				<div id="nand-circuit">
+					<img src="./img/nand.drawio.svg" alt="nand" />
+				</div>
+			</div>
+			<div class="circuit-diagram item">
+				<img src="./img/nand-circuit.svg" alt="nand" />
+			</div>
+		</section>
+		<section class="logic-circuit-container" title="nor">
+			<div class="logic-table item">
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2">Input</th><th>Output</th>
+						</tr>
+						<tr>
+							<th>A</th><th>B</th><th>Y</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td><td>0</td><td>1</td>
+						</tr>
+						<tr>
+							<td>1</td><td>0</td><td>0</td>
+						</tr>
+						<tr>
+							<td>0</td><td>1</td><td>0</td>
+						</tr>
+						<tr>
+							<td>1</td><td>1</td><td>0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="circuit item">
+				<div id="nor-circuit">
+					<img src="./img/nor.svg" alt="nor">
+				</div>
+			</div>
+			<div class="circuit-diagram item">
+				<img src="./img/nor-circuit.svg" alt="nor">
+			</div>
+		</section>
+		<section class="logic-circuit-container" title="exor">
+			<div class="logic-table item">
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2">Input</th><th>Output</th>
+						</tr>
+						<tr>
+							<th>A</th><th>B</th><th>Y</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td><td>0</td><td>0</td>
+						</tr>
+						<tr>
+							<td>1</td><td>0</td><td>1</td>
+						</tr>
+						<tr>
+							<td>0</td><td>1</td><td>1</td>
+						</tr>
+						<tr>
+							<td>1</td><td>1</td><td>0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="circuit item">
+				<div id="exor-circuit">
+					<img src="./img/exor.svg" alt="exor">
+				</div>
+			</div>
+			<div class="circuit-diagram item">
+				<img src="./img/exor-circuit.svg" alt="exor">
+			</div>
+		</section>
+	</main>
+	<footer>
+
+	</footer>
+</body>
+</html>
